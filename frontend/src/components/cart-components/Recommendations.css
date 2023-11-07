@@ -1,0 +1,21 @@
+.recommendations {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.recommended-item {
+    padding: 5px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.recommended-item:hover {
+    background-color: #f7f7f7;
+}

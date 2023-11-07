@@ -1,0 +1,184 @@
+.products-page {
+    width: 100%;
+    height: 100vh; /* Ensure it takes up the entire viewport height minus the navbar height */
+    overflow-y: auto; /* Enable vertical scrolling */
+
+    padding-top: 60px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+    background-color: #f5f5f5;
+
+}
+
+.top-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.products-search-bar {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 80%;
+}
+
+.search-button {
+    padding: 10px 20px;
+    margin-left: -20px;
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cart-button-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #6200ea;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.cart-icon {
+    font-size: 20px;
+}
+
+.cart-count {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr; /* Left sidebar, center content, right sidebar */
+    gap: 20px;
+}
+
+.sidebar {
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.product-item:hover {
+    background-color: #eaeaea;
+}
+
+/* Loading message */
+.loading {
+    text-align: center;
+    padding: 50px 0;
+    font-size: 1.5rem;
+    color: #666;
+}
+
+/* Error message */
+.error-message {
+    text-align: center;
+    padding: 20px;
+    background-color: #fdd;
+    border: 1px solid #f99;
+    border-radius: 4px;
+    margin: 20px;
+    font-size: 1rem;
+    color: #900;
+}
+
+/* Try again button */
+.try-again-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.try-again-button:hover {
+    background-color: #5200d0;
+}
+
+
+/* ... previous styles */
+
+/* Categories list */
+.category-list {
+    list-style-type: none; /* Remove bullets */
+    padding: 0;
+}
+
+.category-list li {
+    margin-bottom: 10px;
+}
+
+.category-list button {
+    background-color: white; /* Light purple background */
+    color: #6200ea; /* Dark purple text */
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    width: 100%; /* Make the button span the full width of the sidebar */
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    position: relative; /* Relative positioning for the ripple effect */
+    overflow: hidden; /* To contain the ripple within the button borders */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+}
+
+.category-list button::after { 
+    /* Simulated ripple effect */
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background-color: rgba(25, 118, 210, 0.6); /* Dark blue ripple */
+    opacity: 0;
+    border-radius: 50%;
+    transform: scale(1, 1) translate(-50%);
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.category-list button:hover {
+    background-color: #d3d0d0; /* Slightly light grey on hover */
+}
+
+.category-list button:active::after {
+    /* Show the ripple on active (button press) */
+    transform: scale(100, 100) translate(-50%);
+    opacity: 1;
+}
+
+.category-list button:focus {
+    outline: none; /* Remove focus outline */
+}
