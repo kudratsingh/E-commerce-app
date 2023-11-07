@@ -1,0 +1,48 @@
+.product-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.product-item:hover {
+    background-color: #eaeaea;
+}
+
+.image-container {
+    width: 150px;  /* Set to desired width */
+    height: 150px;  /* Set to desired height */
+    overflow: hidden;  /* This will hide any part of the image that exceeds the container size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image {
+    width: 100%;  /* This will ensure the image takes up the full width of its container */
+    height: 100%;  /* This will ensure the image takes up the full height of its container */
+    object-fit: cover;  /* This will ensure the image covers the full dimensions of its container without distortion */
+}
+
+.product-price, .product-description {
+    margin: 0;
+}
+
+.details-button {
+    padding: 10px 20px;
+    background-color: #6200ea;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.details-button:hover {
+    background-color: #4b00b5;
+}

@@ -1,0 +1,52 @@
+/* Universal Styles */
+* {
+    box-sizing: border-box; /* Include padding and border in width/height calculations */
+}
+
+/* NavBar Styles */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #6200ea;
+    color: white;
+    padding: 10px 0;
+    font-family: 'Roboto', sans-serif;
+}
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 16px;
+    margin: 0 auto;
+}
+
+.navbar-brand {
+    margin: 0;
+}
+
+.navbar-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar-links li a:hover,
+.active-link {
+    color: #bb86fc;  /* Material light purple for hover/active */
+}
