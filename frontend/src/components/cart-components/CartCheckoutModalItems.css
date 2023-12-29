@@ -1,0 +1,33 @@
+.cart-checkout-modal-items {
+    display: flex;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 0;
+}
+
+.cart-checkout-modal-items-image img {
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.cart-checkout-modal-items-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cart-checkout-modal-items-name {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.cart-checkout-modal-items-price {
+    font-size: 1rem;
+    color: #757575;
+}
+
+.cart-checkout-modal-items-quantity {
+    font-size: 1rem;
+    color: #757575;
+}
