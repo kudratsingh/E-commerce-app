@@ -7,10 +7,13 @@ const {
     getUserOrders,
     updateOrderToPaid,
     getAllOrders,
-    updateOrderToDelivered
+    updateOrderToDelivered,
+    createCheckoutSession,
 } = require('../controllers/orderController');
 
 // Routes related to orders
+
+router.post('/checkout-session', createCheckoutSession);
 
 // Create a new order
 router.post('/', protect, createOrder);
