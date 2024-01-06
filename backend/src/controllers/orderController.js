@@ -1,5 +1,44 @@
 const Order = require('../models/Order');
 const Product = require('../models/Product');  // Might be required for some operations
+const Stripe = require('stripe');
+const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
+
+
+exports.createCheckoutSession = async (req, res) => {
+    try {
+        console.log(req.body);
+        const items = req.body.items; // Extract cart items from the request body
+
+        // Convert cart items to Stripe's format, calculate price, etc.
+        const lineItems = items.map(item => {
+            return {
+                // Example structure, adjust based on your Product model
+                price_data: {
+                    currency: 'usd',
+                    product_data: {
+                        name: item.product.name,
+                    },
+                    unit_amount: item.product.price * 100, // Stripe expects the amount in cents
+                },
+                quantity: item.quantity,
+            };
+        });
+
+        const session = await stripe.checkout.sessions.create({
+            payment_method_types: ['card'],
+            line_items: lineItems,
+            mode: 'payment',
+            success_url: `${req.headers.origin}/success?session_id={CHECKOUT_SESSION_ID}`,
+            cancel_url: `${req.headers.origin}/cancel`,
+        });
+
+        res.json({ url: session.url });
+    } catch (error) {
+        console.error('Error creating checkout session:', error);
+        res.status(500).send('Error creating checkout session');
+    }
+};
+
 
 exports.createOrder = async (req, res) => {
     const { orderItems, shippingAddress, paymentMethod, itemsPrice, taxPrice, shippingPrice, totalPrice } = req.body;

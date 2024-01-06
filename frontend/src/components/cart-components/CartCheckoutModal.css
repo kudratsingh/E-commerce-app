@@ -37,6 +37,12 @@
     }
 }
 
+.payment-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
 /* Style for input fields */
 input[type="text"] {
     padding: 10px;
